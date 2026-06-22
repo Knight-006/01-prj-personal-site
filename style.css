@@ -1,1 +1,218 @@
-/* Add you CSS here */
+:root {
+    --background: #f4f6fb;
+    --surface: #ffffff;
+    --primary: #0077cc;
+    --primary-soft: #e5f3ff;
+    --text: #12212d;
+    --muted: #5f6d7a;
+    --radius: 18px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65;
+    background: var(--background);
+    color: var(--text);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.hero {
+    background: linear-gradient(135deg, #005fa3 0%, #00aaff 100%);
+    color: #ffffff;
+    padding: 4rem 1.5rem 2.5rem;
+    text-align: center;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 119, 204, 0.14);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.nav-links a {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: #dbefff;
+    transform: translateY(-1px);
+}
+
+.hero-content {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    letter-spacing: -0.04em;
+    margin-bottom: 0.9rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+main {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+.bio,
+.skills {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: 0 16px 38px rgba(17, 24, 39, 0.08);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+}
+
+.bio {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.bio-image {
+    flex: 0 0 280px;
+    min-width: 220px;
+    max-width: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid rgba(0, 119, 204, 0.18);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+.bio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.bio-text h2,
+.skills h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: clamp(1.75rem, 2.5vw, 2.4rem);
+}
+
+.bio-text p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.skills {
+    text-align: center;
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.skill-card {
+    background: var(--primary-soft);
+    color: var(--text);
+    padding: 1.2rem 1.25rem;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 119, 204, 0.16);
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.skill-card:hover,
+.skill-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.12);
+}
+
+.site-footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 1.5rem 1.5rem 3rem;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .hero {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        padding: 0.85rem 0;
+    }
+
+    .bio {
+        padding: 2rem;
+    }
+
+    .skills {
+        padding: 2rem;
+    }
+
+    .bio-image {
+        width: 220px;
+        height: 220px;
+    }
+}
