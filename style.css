@@ -22,6 +22,11 @@ img {
     height: auto;
 }
 
+.resume-image {
+    margin: 0 auto;
+    display: block;
+}
+
 a {
     color: #1b4f9a;
     text-decoration: none;
